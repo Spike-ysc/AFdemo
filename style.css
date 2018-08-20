@@ -1,0 +1,149 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-default {
+    border-width: 0;
+    background: white;
+}
+
+/* .nav-list:hover{
+    border-bottom: 3px solid #2196f3;
+} */
+
+.nav-list {
+    padding-right: 50px;
+}
+
+.nav-list li {
+    margin: 0 10px;
+    border-bottom: 3px solid white;
+}
+
+.nav-list li:hover {
+    border-bottom: 3px solid #2196f3;
+}
+
+.head-div {
+    margin-top: 73px;
+    padding: 0px;
+    margin-bottom: 100px;
+}
+
+.head-img-div {
+    position: relative;
+    top: 0px;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.hd-img-msg-div {
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+    color: white;
+}
+
+.head-list-div {
+    padding: 0px;
+}
+
+.head-title {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    color: #2196f3;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.head-name {
+    display: block;
+    margin-bottom: 12px;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.head-msg {
+    margin: 0;
+    margin-bottom: 12px;
+    color: #757575;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.theme-div {
+    margin-bottom: 100px;
+}
+
+.link-div {
+    margin: 20px 0;
+}
+
+.link-div p {
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.link-more {
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.theme-more:hover {
+    text-decoration: none;
+    color: #2196f3;
+}
+
+.main-theme-div {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+}
+
+.theme-title {
+    font-size: 32px;
+    margin: 24px 0;
+    font-weight: 100;
+}
+
+.theme-msg {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 24px 0;
+    line-height: 2.0em;
+
+}
+
+.max-width-100 {
+    max-width: 100%;
+}
+
+.tm-top {
+    height: 180px;
+    overflow: hidden;
+    padding-right: 5px;
+}
+
+.tm-bottom {
+    height: 180%;
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.story-div {
+    margin-bottom: 100px;
+}

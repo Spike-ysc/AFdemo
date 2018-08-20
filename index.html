@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AFdemo</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+       
+    </style>
+
+    <script>
+        $(function () {
+
+        });
+        var maxScrollTop = 53;
+        $(window).scroll(maxScrollTop, function (event) {
+            var $me = $(this);
+            if ($me.scrollTop() > event.data) {
+                $('nav').css('box-shadow', '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.2)');
+            } else {
+                $('nav').css('box-shadow', 'none');
+            }
+        });
+    </script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" style="height:100%" src="images/item2.png">
+            </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AFdemo</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#">登陆</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">Action</a>
+                    </li>
+                    <li>
+                        <a href="#">Another action</a>
+                    </li>
+                    <li>
+                        <a href="#">Something else here</a>
+                    </li>
+                    <li>
+                        <a href="#">Separated link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right nav-list">
+                <li>
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">浏览</a>
+                </li>
+                <li>
+                    <a href="#">附近</a>
+                </li>
+                <li>
+                    <a href="#">个人资料</a>
+                </li>
+            </ul>
+            <!-- <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form> -->
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    <div class="container head-div">
+        <div class="head-img-div">
+            <a href="#">
+                <img class="img-responsive" src="images/head-img1.jpg" alt="">
+            </a>
+            <div class="hd-img-msg-div">
+                <h2>主题</h2>
+                <h4>这是一个复杂的内容</h4>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-md-4 head-list-div" style="padding-right:10px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+            <div class="col-md-4 head-list-div" style="padding:0 5px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+            <div class="col-md-4 head-list-div" style="padding-left:10px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <div class="theme-div container">
+        <div class="link-div col-md-12 no-padding">
+            <div class="col-md-10 no-padding">
+                <p>精选主题</p>
+            </div>
+            <div class="col-md-2 no-padding" style="text-align:right;">
+                <a class="theme-more" href="#">
+                    查看全部
+                </a>
+            </div>
+        </div>
+        <div class="main-theme-div">
+            <div class="col-md-3" style="padding:24px;">
+                <p class="theme-title">
+                    今敏的一生
+                </p>
+                <p class="theme-msg">
+                    今敏作为日本著名的动画导演，执导了《红辣椒》《蓝色忧郁》《东京教父》等知名动画电影， 他英年早逝，却成就斐然，拥有传奇的一生。
+                </p>
+            </div>
+            <div class="col-md-9 no-padding">
+                <div class="col-md-6 no-padding">
+
+                    <div class="col-md-12 no-padding tm-top">
+                        <img class="max-width-100" src="images/夏日大作战.jpg" alt="">
+                    </div>
+                    <div class="col-md-12 no-padding tm-bottom ">
+                        <div class="col-md-6 no-padding" style="padding-right:5px;">
+                            <img class="max-width-100" src="images/女性-刺客.jpg" alt="">
+                        </div>
+                        <div class="col-md-6 no-padding" style="padding-right:5px;">
+                            <img class="max-width-100" src="images/女性-刺客.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 no-padding">
+                    <img style="max-height:360px;" src="images/风之谷.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container story-div">
+        <div class="link-div col-md-12 no-padding">
+            <div class="col-md-10 no-padding">
+                <p>精选故事</p>
+            </div>
+            <div class="col-md-2 no-padding" style="text-align:right;">
+                <a class="link-more" href="#">
+                    查看全部
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-3 head-list-div" style="padding-right:10px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+            <div class="col-md-3 head-list-div" style="padding:0 5px; padding-right:7.5px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+            <div class="col-md-3 head-list-div" style="padding:0 5px; padding-left:7.5px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+            <div class="col-md-3 head-list-div" style="padding-left:10px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container color-time-div">
+        <div class="link-div col-md-12 no-padding">
+            <div class="col-md-10 no-padding">
+                <p>按时间和颜色浏览</p>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-6 head-list-div" style="padding-right:10px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+            <div class="col-md-6 head-list-div" style="padding-left:10px;">
+                <a href="#">
+                    <img class="img-responsive" src="images/风之谷.jpg" alt="">
+                </a>
+                <div>
+                    <p class="head-title">宫崎骏</h4>
+                        <p class="head-name">《风之谷》</p>
+                        <p class="head-msg">宫崎骏的第一部长篇动画电影</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

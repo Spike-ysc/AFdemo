@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog-night</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            /* background: #F5F8F9; */
+            background: #1A1C1B;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+        }
+
+        hr {
+            border-color: #0A0A0A;
+        }
+
+        ul {
+            list-style-type: circle;
+            padding: 0px;
+            padding-left: 30px;
+        }
+
+        .navbar-default {
+            background-color: #0A0A0A;
+            border-color: #0A0A0A;
+            /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12); */
+        }
+
+        .navbar-right li a img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .right-border {
+            /* border-right: 1px solid #F4F7F8; */
+        }
+
+        .left-border {
+            /* border-left: 1px solid #F4F7F8; */
+        }
+
+        .user-msg-div {
+            background: #111312;
+            border: #F5F8F9;
+            padding: 30px 0 10px 0;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+            /* width: 100%; */
+        }
+
+        .posts-div {
+            background: #111312;
+            border: #F5F8F9;
+            padding: 10px 0;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+            margin-bottom: 20px;
+            /* width: 100%; */
+        }
+
+        .posts-div>div {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .user-msg-div h3,
+        h4,
+        h5 {
+            padding-bottom: 5px;
+        }
+
+        .user-msg-div h4 {
+            color: #717579;
+        }
+
+        .user-msg-div h5 {
+            color: #ABAEB0;
+        }
+
+        .works-div {
+            width: 100%;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .msg-link-div {
+            width: 100%;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .output-div {
+            width: 100%;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .my-btn {
+            color: white;
+            display: inline-block;
+            background: #0A0A0A;
+            color: #38B7EA;
+            width: 100px;
+            padding: 6px 24px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid #38B7EA;
+            border-radius: 20px
+        }
+
+        .btn-positive {
+            background-color: #38B7EA;
+            color: #000000;
+        }
+
+        .posts-list-div {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .posts-list-div h6 {
+            color: #ABAEB0;
+        }
+
+        .posts-list-div h5:last-child {
+            color: #38B7EA;
+        }
+
+        .back-msg-p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.67em;
+            text-overflow: ellipsis;
+            color: #737A80;
+
+        }
+
+        .back-ul li p:first-child {
+            font-size: 13px;
+            color: #C1C2C4;
+        }
+
+        .back-ul li p:last-child {
+            color: #38B7EA;
+            font-size: 15px;
+        }
+
+        .interest-div {
+            padding: 0 30px;
+        }
+
+        .interest-div p {
+            display: inline;
+            background: #1A1C1B;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        footer {
+            border-top: 1px solid #0A0A0A;
+            background: #111312;
+            padding: 30px;
+        }
+
+        .navbar-default .navbar-nav>li>a {
+            color: #ffffff;
+        }
+
+        .navbar-default .navbar-nav>li>a:hover {
+            color: #ffffff;
+        }
+
+
+        /* @media (min-width: 768px) */
+
+        @media(min-width: 768px) {
+            .navbar {
+                border-radius: 0px;
+                color: black;
+            }
+            .navbar-nav li {
+                padding: 0 20px;
+
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.left-img').click(function () {
+                // $('.back-list').css('margin-left','50px');
+
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 顶部导航页面 -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header right-border">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">MY BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">附近</a>
+                </li>
+                <li>
+                    <a href="#">浏览</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" style="padding-bottom: 10px; padding-top: 10px;">
+                        <img style="width: 30px; height: 30px;" src="images/head-icon.jpg" class="img-circle" alt="">
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right right-border left-border">
+                <li>
+                    <a href="#">
+                        <img src="images/对话.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/统计.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/链接.png" alt="">
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="container-fluid">
+        <div class="col-md-3 text-center" style="padding-left: 0px;">
+            <div class="user-msg-div">
+                <a href="#">
+                    <img src="images/head-icon.jpg" style="width:120px;" class="img-circle" alt="">
+                </a>
+                <h3>闫世昌</h3>
+                <h4>河南大学软件工程</h4>
+                <h5>大三在读生</h5>
+
+                <button type="button" class="my-btn btn-positive">Follow</button>
+
+                <button type="button" class="my-btn">Connect</button>
+
+                <hr>
+                <div class="works-div">
+                    <div class="col-md-6">
+                        <h3>200</h3>
+                        <h5>Connection</h5>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>200</h3>
+                        <h5>Connection</h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="msg-link-div">
+                    <img style="width: 20px;" src="images/链接.png" alt="">
+                    <a style="padding: 10px;" href="#">www.github.com/shisss</a>
+                </div>
+                <hr>
+                <div class="output-div">
+                    <img style="width: 20px;" src="images/文件.png" alt="">
+                    <a style="padding: 10px;" href="#">导出为PDF</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="posts-div">
+                <div>
+                    <h4 style="font-weight: 600;">POSTS
+                        <span style="float:right;">
+                            <a href="#">
+                                <img class="left-img" style="width: 30px;" src="images/向左-night.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img style="width: 30px;" src="images/向右-night.png" alt="">
+                            </a>
+                        </span>
+                    </h4>
+                </div>
+                <hr>
+                <div class="back-list" style="padding:10px 25px; display: inline-block;">
+                    <div class="col-md-4 posts-list-div">
+                        <img style="width: 100%;" class="img-rounded" src="images/post-list-1.jpg" alt="">
+                        <h5>3 Myths That confuse...</h5>
+                        <h6>February 19, 2014</h6>
+                    </div>
+
+                    <div class="col-md-4 posts-list-div">
+                        <img style="width: 100%;" class="img-rounded" src="images/post-list-2.jpg" alt="">
+                        <h5>3 Myths That confuse...</h5>
+                        <h6>February 19, 2014</h6>
+                    </div>
+
+                    <div class="col-md-4 posts-list-div">
+                        <img style="width: 100%;" class="img-rounded" src="images/post-list-3.jpg" alt="">
+                        <h5>3 Myths That confuse...</h5>
+                        <h6>February 19, 2014</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="posts-div back-div">
+                <div>
+                    <h4 style="font-weight: 600;">BACKGROUND</h4>
+                </div>
+                <hr>
+                <div style="margin-bottom: 50px;">
+                    <h5>
+                        <span>
+                            <img style="width: 20px;margin-right: 10px;" src="images/文件.png" alt="">
+                        </span>SUMMARY</h5>
+
+                    <div style="padding:0 30px;">
+                        <p class="back-msg-p">
+                            《红楼梦》，中国古典四大名著之首，清代作家曹雪芹创作的章回体长篇小说 [1] ，又名《石头记》《金玉缘》。此书分为120回“程本”和80回“脂本”两种版本系统，程本为程伟元排印的印刷本，脂本为脂砚斋在不同时期抄评的早期手抄本，脂本是程本的底本
+                            [2] 。 《红楼梦》新版通行本前80回据脂本汇校，后40回据程本汇校，署名“曹雪芹著，无名氏续，程伟元、高鹗整理” [3] 。作者尚有较大争议， [4] 自述写作目的是为平生所见奇女子扬名立传
+                            [4] 。 小说以贾、史、王、薛四大家族的兴衰为背景，以富贵公子贾宝玉为视角，描绘了一批举止见识出于须眉之上的闺阁佳人们的人生百态，展现了正邪两赋有情人的人性美和悲剧美，可以说是一部从各个角度展现女性美的史诗
+                            [5] 。 《红楼梦》是一部具有世界影响力的人情小说作品 [6] ，举世公认的中国古典小说巅峰之作，中国封建社会的百科全书，传统文化的集大成者。小说以“大旨谈情，实录其事”自勉，只按自己的事体情理，按迹循踪，摆脱旧套，新鲜别致
+                            [1] ，取得了非凡的艺术成就。“真事隐去，假语村言”的特殊笔法更是令后世读者脑洞大开，揣测之说久而遂多 [6] 。围绕《红楼梦》的品读研究形成了一门显学——红学。
+                        </p>
+                    </div>
+                </div>
+
+
+                <div style="margin-bottom: 50px;">
+                    <h5>
+                        <span>
+                            <img style="width: 20px;margin-right: 10px;" src="images/文件.png" alt="">
+                        </span>EXPERINECE</h5>
+
+                    <div style="padding:0 30px;">
+                        <ul class="back-ul">
+                            <li>
+                                <p>2000 - NOW</p>
+                                <p>Co-founder, Chairman
+                                    <span style="float: right;">
+                                        <img src="images/文件.png" style="width: 30px" alt="">
+                                    </span>
+                                </p>
+                                <p>Microsoft</p>
+                            </li>
+
+                            <li>
+                                <p>2000 - NOW</p>
+                                <p>Co-founder, Chairman
+                                    <span style="float: right;">
+                                        <img src="images/文件.png" style="width: 30px" alt="">
+                                    </span>
+                                </p>
+                                <p>Microsoft</p>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-bottom: 50px;">
+                    <h5>
+                        <span>
+                            <img style="width: 20px;margin-right: 10px;" src="images/文件.png" alt="">
+                        </span>MORE INTEREST</h5>
+
+                    <div class="interest-div">
+                        <p>Web Design</p>
+                        <p>Web Design</p>
+                        <p>Web Design</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="posts-div">
+                <div>
+                    <h4 style="font-weight: 600;">
+                        FOLLOW
+                        <span style="float:right;">
+                            <a href="#">
+                                <img style="width: 30px;" src="images/向左-night.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img style="width: 30px;" src="images/向右-night.png" alt="">
+                            </a>
+                        </span>
+                    </h4>
+                </div>
+                <hr>
+
+                <div style="padding:10px 25px; display: inline-block;">
+                    <div class="col-md-3 posts-list-div">
+                        <img style="width: 100%;" class="img-rounded" src="images/post-list-1.jpg" alt="">
+                        <h5>Microsoft</h5>
+                        <h5>
+                            <span>
+                                <img style="width: 20px; margin-right: 8px;" src="images/添加.png" alt="">
+                            </span>FOLLOW</h5>
+                    </div>
+                    <div class="col-md-3 posts-list-div">
+                        <img style="width: 100%;" class="img-rounded" src="images/post-list-1.jpg" alt="">
+                        <h5>Microsoft</h5>
+                        <h5>
+                            <span>
+                                <img style="width: 20px; margin-right: 8px;" src="images/添加.png" alt="">
+                            </span>FOLLOW</h5>
+                    </div>
+                    <div class="col-md-3 posts-list-div">
+                        <img style="width: 100%;" class="img-rounded" src="images/post-list-1.jpg" alt="">
+                        <h5>Microsoft</h5>
+                        <h5>
+                            <span>
+                                <img style="width: 20px; margin-right: 8px;" src="images/添加.png" alt="">
+                            </span>FOLLOW</h5>
+                    </div>
+                    <div class="col-md-3 posts-list-div">
+                        <img style="width: 100%;" class="img-rounded" src="images/post-list-1.jpg" alt="">
+                        <h5>Microsoft</h5>
+                        <h5>
+                            <span>
+                                <img style="width: 20px; margin-right: 8px;" src="images/添加.png" alt="">
+                            </span>FOLLOW</h5>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-bottom: 50px;">
+                    <button style="width: 150px;" class="my-btn">See ALL(20)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <h3>message</h3>
+        </div>
+    </div>
+    <footer class="text-center">
+        <h4>Linked Corporation &reg; 2014</h4>
+    </footer>
+
+
+</body>
+
+</html>

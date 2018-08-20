@@ -1,0 +1,108 @@
+<html>
+
+<head>
+  <title>JS图片左右切换效果</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+    @keyframes myfirst {
+      from {
+        margin-left: 0;
+      }
+      to {
+        margin-left: -100px;
+      }
+    }
+
+    #qh-ul li img {
+      width: 100px;
+    }
+
+    #btn-div img {
+      width: 30px;
+    }
+
+    #qh-div {
+      position: absolute;
+      overflow: hidden;
+      width: 300px;
+      height: 100px;
+    }
+
+    .donghua {
+      animation: myfirst 1s;
+      animation-fill-mode: forwards;
+    }
+
+    ul {
+      position: relative;
+      list-style-type: none;
+      left: -100px;
+      overflow: hidden;
+      padding: 0px;
+      width: 500px;
+    }
+
+    li {
+      float: left;
+    }
+  </style>
+  <script>
+    jQuery.extend(jQuery.easing,
+      {
+        easeOutBack: function (x, t, b, c, d, s) {
+          if (s == undefined) s = 1.70158;
+          return c * ((t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
+        },
+      });
+    $(document).ready(function () {
+      var num = -100;
+      $('.left-img').click(function () {
+        num -= 100
+  
+        $('ul').animate({ left: num }, 500, 'easeOutBack');
+      });
+      $('.right-img').click(function () {
+        num += 100
+
+        $('ul').animate({ left: num }, 500, 'easeOutBack');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="btn-div">
+    <img class="left-img" src="images/向左.png" alt="">
+    <img class="right-img" src="images/向右.png" alt="">
+  </div>
+  <div style="width: 300px; height: 100px; position: relative;">
+    <div id="qh-div">
+      <ul id="qh-ul">
+        <li>
+          <img src="images/对话.png" alt="">
+        </li>
+        <li>
+          <img src="images/对话.png" alt="">
+        </li>
+        <li>
+          <img src="images/对话.png" alt="">
+        </li>
+        <li>
+          <img src="images/对话.png" alt="">
+        </li>
+        <li>
+          <img src="images/对话.png" alt="">
+        </li>
+        <li>
+          <img src="images/对话.png" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h2>message</h2>
+</body>
+
+</html>
